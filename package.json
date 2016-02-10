@@ -6,8 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamdavidjackson/openlint.git"
+  },
+  "keywords": [
+    "lint",
+    "linter",
+    "javascript",
+    "accessibility",
+    "node"
+  ],
+  "author": "David Jackson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamdavidjackson/openlint/issues"
+  },
+  "homepage": "https://github.com/iamdavidjackson/openlint#readme",
   "dependencies": {
     "htmlparser2": "^3.9.0",
     "lodash": "^4.3.0"
