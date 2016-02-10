@@ -1,0 +1,4 @@
+#openlint
+
+##Installation
+`npm install --save-dev openlint`
