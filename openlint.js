@@ -1,18 +1,26 @@
+var _ = require('lodash');
 var Parser = require('./parser');
 var rules = require('./rules');
 
-var parser = new Parser({});
+function OpenLint (options) {
+	this.options = _.assign(options, defaultOptions);
+	this.rulesCount = this.options.rules.length;
 
-function OpenLint () {
-	this.rules = [
-		'imageAltTags'
-	];
-	this.rulesCount = this.rules.length;
+	this.parser = new Parser(this.options.parser);
 }
+
+var defaultOptions = {
+	rules: [
+		'imageAltTags'
+	],
+	parser: {
+
+	}
+};
 
 OpenLint.prototype.lint = function (html) {
 	this.results = [];
-	var elements = parser.parse(html);
+	var elements = this.parser.parse(html);
 	this.lintElements(elements);
 	
 	return this.results; 

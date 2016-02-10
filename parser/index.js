@@ -3,11 +3,11 @@ var htmlparser = require('htmlparser2');
 var DomHandler = require('./domHandler');
 
 function Parser (options) {
-	options = _.assign(options, defaultOptions);
+	this.options = _.assign(options, defaultOptions);
 
 	this.domHandler = new DomHandler();
 
-	this.parser = new htmlparser.Parser(this.domHandler, options);
+	this.parser = new htmlparser.Parser(this.domHandler, this.options);
 
 	this.domHandler.setParser(this.parser);
 };
